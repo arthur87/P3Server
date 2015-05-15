@@ -1,0 +1,16 @@
+{
+  "private": "true",
+  "name": "test",
+  "version": "0.0.1",
+  "description": "test",
+  "main": "app.js",
+  "author": {
+    "name": "asakawa"
+  },
+  "dependencies": {
+    "ejs": "*",
+    "express": "^4.12.3",
+    "body-parser": "*",
+    "socket.io": "*"
+  }
+}

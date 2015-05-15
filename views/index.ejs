@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <title>P3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type='text/javascript' src="js/bootstrap.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+  <script type='text/javascript'>
+  $(document).ready(function() {
+    var socket = io.connect();
+    socket.on('message', function(data) {
+      var json = JSON.parse(data);
+      var levels = ['', '<span class="label label-danger">Error</span>', '<span class="label label-warning">Warning</span>', '<span class="label label-info">Info</span>']
+
+      $("#table tbody:last").append("<tr><td>" + json.created_at + "</td><td>" + json.title + "</td><td>" + json.description + "</td><td>" + levels[json.level] + "</td></tr>");
+    });
+  });
+  </script>
+
+  <table class="table table-striped" id="table">
+    <thead>
+    <tr><th>created_at</th><th>title</th><th>description</th><th>level</th></tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  </body>
+</html>
