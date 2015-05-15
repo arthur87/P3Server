@@ -1,8 +1,8 @@
 {
   "private": "true",
-  "name": "test",
+  "name": "P3Server",
   "version": "0.0.1",
-  "description": "test",
+  "description": "P3Server",
   "main": "app.js",
   "author": {
     "name": "asakawa"
